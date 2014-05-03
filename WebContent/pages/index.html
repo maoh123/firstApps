@@ -5,31 +5,37 @@
 	<title>My first app</title>
 	<link rel="stylesheet" href="../css/main.css">
 	<script src="../js/angular.min.js"></script>
+	<script src="../js/jquery-1.11.1.min.js"></script>
 	<script src="../js/controller.js"></script>
 </head>
 <body ng-controller="FirstAppController">
 	<h1>My first app</h1>
-	<p>Rules :</br>
+	<p>Goal :</br>
 	move blues in right cases</br>
 	move reds in left cases</br>
+	</p>
+	<p>Rules :</br>
 	blues can only move right</br>
 	reds can only move left</br>
 	can only move in one adjacent case or jump over one different color case</br>
 	</p>
+	{{ debug }}
 	<table>
 		<tr>
-			<td id="case1"  class="blue"    ng-click="move(this)">X</td>
-			<td id="case2"  class="blue"    ng-click="move(this)">X</td>
-			<td id="case3"  class="blue"    ng-click="move(this)">X</td>
-			<td id="case4"  class="blue"    ng-click="move(this)">X</td>
-			<td id="case5"  class="blue"    ng-click="move(this)">X</td>
-			<td id="case6"  class="neutral" ng-click="move(this)"></td>
-			<td id="case7"  class="red"     ng-click="move(this)">X</td>
-			<td id="case8"  class="red"     ng-click="move(this)">X</td>
-			<td id="case9"  class="red"     ng-click="move(this)">X</td>
-			<td id="case10" class="red"     ng-click="move(this)">X</td>
-			<td id="case11" class="red"     ng-click="move(this)">X</td>
+			<td id="case1"  class="blue" ng-click="move($event)">X</td>
+			<td id="case2"  class="blue" ng-click="move($event)">X</td>
+			<td id="case3"  class="blue" ng-click="move($event)">X</td>
+			<td id="case4"  class="blue" ng-click="move($event)">X</td>
+			<td id="case5"  class="blue" ng-click="move($event)">X</td>
+			<td id="case6"  class="free" ng-click="move($event)"></td>
+			<td id="case7"  class="red"  ng-click="move($event)">X</td>
+			<td id="case8"  class="red"  ng-click="move($event)">X</td>
+			<td id="case9"  class="red"  ng-click="move($event)">X</td>
+			<td id="case10" class="red"  ng-click="move($event)">X</td>
+			<td id="case11" class="red"  ng-click="move($event)">X</td>
 		</tr>
 	</table>
+	<button ng-click="reset()">Reset game</button>
+	{{ feedback }}
 </body>
 </html>
